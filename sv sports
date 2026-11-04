@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SV SPORTS | Premium Athletic Gear & Apparel</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#F3F5F3',
+                            100: '#E4E8E4',
+                            200: '#C7D1C7',
+                            300: '#A6B6A7',
+                            400: '#899B8A',
+                            500: '#6C7E6D',
+                            600: '#566657',
+                            700: '#435044',
+                            800: '#323C33',
+                            900: '#232924',
+                        },
+                        cream: '#FAF9F6',
+                        sand: '#E6E4DE',
+                        charcoal: '#1E211F',
+                        muted: '#7C7D79',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FAF9F6;
+            color: #1E211F;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF9F6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #A6B6A7;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6C7E6D;
+        }
+        .carousel-slide {
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-nav {
+            background: rgba(250, 249, 246, 0.88);
+            backdrop-filter: blur(16px);
+        }
+        .glow-subtle {
+            box-shadow: 0 10px 30px -10px rgba(108, 126, 109, 0.15);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between selection:bg-sage-600 selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-charcoal text-cream text-[11px] tracking-widest py-2.5 text-center uppercase font-medium border-b border-sage-800">
+        <i class="fa-solid fa-truck-fast text-sage-400 mr-1.5"></i> Complimentary Shipping on Orders Over $100 &nbsp;|&nbsp; Crafted for Athletic Excellence
+    </div>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-sand/80 transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center space-x-2.5 group">
+                        <span class="w-10 h-10 rounded-2xl bg-sage-600 text-cream flex items-center justify-center font-bold text-lg tracking-wider group-hover:bg-charcoal transition-all shadow-sm">SV</span>
+                        <div class="flex flex-col">
+                            <span class="text-xl font-bold tracking-tight text-charcoal leading-none">SV <span class="text-sage-600 font-light">SPORTS</span></span>
+                            <span class="text-[9px] uppercase tracking-widest text-muted font-semibold mt-0.5">Est. 2021</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex space-x-9 text-sm font-medium text-charcoal">
+                    <a href="#hero" class="hover:text-sage-600 transition-colors py-2">Home</a>
+                    <a href="#categories" class="hover:text-sage-600 transition-colors py-2">Disciplines</a>
+                    <a href="#shop" class="hover:text-sage-600 transition-colors py-2">Catalog</a>
+                    <a href="#ai-assistant" class="hover:text-sage-600 transition-colors py-2 flex items-center space-x-1.5 text-sage-700 font-semibold bg-sage-50 px-3 py-1 rounded-full border border-sage-200">
+                        <i class="fa-solid fa-wand-magic-sparkles text-sage-600 text-xs"></i>
+                        <span>Smart Advisor</span>
+                    </a>
+                    <a href="#about" class="hover:text-sage-600 transition-colors py-2">About</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="flex items-center space-x-3.5">
+                    <!-- Search Input Widget -->
+                    <div class="relative hidden sm:block w-44 lg:w-60">
+                        <input type="text" id="headerSearchInput" placeholder="Search gear..."
+                            class="w-full pl-9 pr-4 py-2 text-xs rounded-full bg-sand/40 border border-sand focus:border-sage-500 focus:bg-white focus:outline-none transition-all">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-xs text-muted"></i>
+                    </div>
+
+                    <!-- AI Smart Assistant Trigger -->
+                    <a href="#ai-assistant" class="p-2 text-charcoal hover:text-sage-600 transition-colors rounded-full hover:bg-sand/40" title="AI Shopping Assistant">
+                        <i class="fa-solid fa-robot text-lg"></i>
+                    </a>
+
+                    <!-- Cart Trigger Button -->
+                    <button id="cartBtn" class="p-2.5 text-charcoal hover:text-sage-600 transition-colors relative rounded-full hover:bg-sand/40" aria-label="Shopping Cart">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span id="cartBadge" class="absolute top-0 right-0 bg-sage-600 text-cream text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-cream hidden">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 text-charcoal focus:outline-none rounded-lg hover:bg-sand/40" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-sand bg-cream px-5 pt-4 pb-6 space-y-3">
+            <div class="mb-3">
+                <input type="text" id="mobileSearchInput" placeholder="Search products..."
+                    class="w-full pl-9 pr-4 py-2.5 text-xs rounded-full bg-sand/60 border border-sand focus:border-sage-500 focus:outline-none">
+            </div>
+            <a href="#hero" class="block py-2 text-base font-medium text-charcoal hover:text-sage-600">Home</a>
+            <a href="#categories" class="block py-2 text-base font-medium text-charcoal hover:text-sage-600">Disciplines</a>
+            <a href="#shop" class="block py-2 text-base font-medium text-charcoal hover:text-sage-600">Shop Catalog</a>
+            <a href="#ai-assistant" class="block py-2 text-base font-semibold text-sage-700">Smart Advisor (AI)</a>
+            <a href="#about" class="block py-2 text-base font-medium text-charcoal hover:text-sage-600">About Us</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION WITH CAROUSEL -->
+    <section id="hero" class="relative bg-sand/20 overflow-hidden border-b border-sand/60">
+        <div class="relative min-h-[540px] lg:min-h-[640px] flex items-center">
+            
+            <!-- Carousel Slides -->
+            <div id="carouselContainer" class="absolute inset-0">
+                <!-- Slide 1 -->
+                <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000 flex items-center">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c623266010b?q=80&w=1600&auto=format&fit=crop" 
+                         alt="Athletic Endurance" class="absolute inset-0 w-full h-full object-cover opacity-20 object-center">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                        <div class="max-w-xl">
+                            <span class="inline-flex items-center space-x-2 px-3.5 py-1 bg-sage-600 text-cream text-[11px] font-semibold tracking-wider uppercase rounded-full mb-4 shadow-sm">
+                                <i class="fa-solid fa-sparkles text-[10px]"></i>
+                                <span>2026 Collection</span>
+                            </span>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-charcoal mb-4 leading-[1.15]">Elevate Athletic Mastery</h1>
+                            <p class="text-base sm:text-lg text-muted mb-8 leading-relaxed font-normal">Precision-engineered sports equipment designed for athletes who value quiet elegance and uncompromised durability.</p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#shop" class="px-7 py-3.5 bg-sage-600 text-cream font-semibold text-sm rounded-full hover:bg-charcoal transition-all shadow-md hover:shadow-lg">Explore Collection</a>
+                                <a href="#ai-assistant" class="px-7 py-3.5 bg-white border border-sand text-charcoal font-semibold text-sm rounded-full hover:border-sage-500 transition-all shadow-sm flex items-center space-x-2">
+                                    <i class="fa-solid fa-wand-magic-sparkles text-sage-600"></i>
+                                    <span>Consult AI Advisor</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 flex items-center">
+                    <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=1600&auto=format&fit=crop" 
+                         alt="Cricket Mastercraft" class="absolute inset-0 w-full h-full object-cover opacity-20 object-center">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                        <div class="max-w-xl">
+                            <span class="inline-flex items-center space-x-2 px-3.5 py-1 bg-charcoal text-cream text-[11px] font-semibold tracking-wider uppercase rounded-full mb-4 shadow-sm">
+                                <span>Mastercraft Series</span>
+                            </span>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-charcoal mb-4 leading-[1.15]">Crafted for the Boundary</h1>
+                            <p class="text-base sm:text-lg text-muted mb-8 leading-relaxed font-normal">Grade 1 English Willow bats and impact-reducing protective gear built for peak tournament performance.</p>
+                            <div class="flex flex-wrap gap-4">
+                                <button onclick="filterByCategory('Cricket')" class="px-7 py-3.5 bg-sage-600 text-cream font-semibold text-sm rounded-full hover:bg-charcoal transition-all shadow-md">Shop Cricket Gear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 flex items-center">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1600&auto=format&fit=crop" 
+                         alt="Minimalist Gym" class="absolute inset-0 w-full h-full object-cover opacity-20 object-center">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                        <div class="max-w-xl">
+                            <span class="inline-flex items-center space-x-2 px-3.5 py-1 bg-sage-700 text-cream text-[11px] font-semibold tracking-wider uppercase rounded-full mb-4 shadow-sm">
+                                <span>Home Gym Architecture</span>
+                            </span>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-charcoal mb-4 leading-[1.15]">Refined Strength Equipment</h1>
+                            <p class="text-base sm:text-lg text-muted mb-8 leading-relaxed font-normal">Ergonomic design meets natural materials for high-intensity indoor conditioning.</p>
+                            <div class="flex flex-wrap gap-4">
+                                <button onclick="filterByCategory('Fitness')" class="px-7 py-3.5 bg-sage-600 text-cream font-semibold text-sm rounded-full hover:bg-charcoal transition-all shadow-md">Shop Fitness Equipment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Indicators -->
+            <div class="absolute bottom-6 left-0 right-0 z-20 flex justify-center space-x-3">
+                <button onclick="setSlide(0)" class="carousel-dot w-8 h-1.5 rounded-full bg-sage-600 transition-all" aria-label="Slide 1"></button>
+                <button onclick="setSlide(1)" class="carousel-dot w-2.5 h-1.5 rounded-full bg-muted/40 hover:bg-sage-500 transition-all" aria-label="Slide 2"></button>
+                <button onclick="setSlide(2)" class="carousel-dot w-2.5 h-1.5 rounded-full bg-muted/40 hover:bg-sage-500 transition-all" aria-label="Slide 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPORTS CATEGORIES SECTION -->
+    <section id="categories" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <span class="text-xs font-bold text-sage-600 uppercase tracking-widest">Curated Disciplines</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-charcoal mt-1 tracking-tight">Explore by Sport</h2>
+            </div>
+            <p class="text-muted text-sm max-w-md mt-2 md:mt-0 leading-relaxed">Specialized gear collections tailored for high endurance, precision control, and tactical agility.</p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+            <!-- Cricket -->
+            <div onclick="filterByCategory('Cricket')" class="group cursor-pointer bg-white p-6 rounded-2xl border border-sand hover:border-sage-400 hover:shadow-xl transition-all duration-300 text-center flex flex-col items-center">
+                <div class="w-14 h-14 mb-4 rounded-2xl bg-sage-50 text-sage-700 flex items-center justify-center group-hover:bg-sage-600 group-hover:text-cream transition-all duration-300 shadow-sm">
+                    <i class="fa-solid fa-baseball-bat-ball text-xl"></i>
+                </div>
+                <h3 class="font-bold text-charcoal group-hover:text-sage-600 transition-colors text-sm sm:text-base">Cricket</h3>
+                <span class="text-[11px] text-muted mt-1 font-medium">14 Products</span>
+            </div>
+
+            <!-- Football -->
+            <div onclick="filterByCategory('Football')" class="group cursor-pointer bg-white p-6 rounded-2xl border border-sand hover:border-sage-400 hover:shadow-xl transition-all duration-300 text-center flex flex-col items-center">
+                <div class="w-14 h-14 mb-4 rounded-2xl bg-sage-50 text-sage-700 flex items-center justify-center group-hover:bg-sage-600 group-hover:text-cream transition-all duration-300 shadow-sm">
+                    <i class="fa-solid fa-futbol text-xl"></i>
+                </div>
+                <h3 class="font-bold text-charcoal group-hover:text-sage-600 transition-colors text-sm sm:text-base">Football</h3>
+                <span class="text-[11px] text-muted mt-1 font-medium">18 Products</span>
+            </div>
+
+            <!-- Volleyball -->
+            <div onclick="filterByCategory('Volleyball')" class="group cursor-pointer bg-white p-6 rounded-2xl border border-sand hover:border-sage-400 hover:shadow-xl transition-all duration-300 text-center flex flex-col items-center">
+                <div class="w-14 h-14 mb-4 rounded-2xl bg-sage-50 text-sage-700 flex items-center justify-center group-hover:bg-sage-600 group-hover:text-cream transition-all duration-300 shadow-sm">
+                    <i class="fa-solid fa-volleyball text-xl"></i>
+                </div>
+                <h3 class="font-bold text-charcoal group-hover:text-sage-600 transition-colors text-sm sm:text-base">Volleyball</h3>
+                <span class="text-[11px] text-muted mt-1 font-medium">10 Products</span>
+            </div>
+
+            <!-- Basketball -->
+            <div onclick="filterByCategory('Basketball')" class="group cursor-pointer bg-white p-6 rounded-2xl border border-sand hover:border-sage-400 hover:shadow-xl transition-all duration-300 text-center flex flex-col items-center">
+                <div class="w-14 h-14 mb-4 rounded-2xl bg-sage-50 text-sage-700 flex items-center justify-center group-hover:bg-sage-600 group-hover:text-cream transition-all duration-300 shadow-sm">
+                    <i class="fa-solid fa-basketball text-xl"></i>
+                </div>
+                <h3 class="font-bold text-charcoal group-hover:text-sage-600 transition-colors text-sm sm:text-base">Basketball</h3>
+                <span class="text-[11px] text-muted mt-1 font-medium">12 Products</span>
+            </div>
+
+            <!-- Badminton -->
+            <div onclick="filterByCategory('Badminton')" class="group cursor-pointer bg-white p-6 rounded-2xl border border-sand hover:border-sage-400 hover:shadow-xl transition-all duration-300 text-center flex flex-col items-center">
+                <div class="w-14 h-14 mb-4 rounded-2xl bg-sage-50 text-sage-700 flex items-center justify-center group-hover:bg-sage-600 group-hover:text-cream transition-all duration-300 shadow-sm">
+                    <i class="fa-solid fa-table-tennis-paddle-ball text-xl"></i>
+                </div>
+                <h3 class="font-bold text-charcoal group-hover:text-sage-600 transition-colors text-sm sm:text-base">Badminton</h3>
+                <span class="text-[11px] text-muted mt-1 font-medium">15 Products</span>
+            </div>
+
+            <!-- Fitness -->
+            <div onclick="filterByCategory('Fitness')" class="group cursor-pointer bg-white p-6 rounded-2xl border border-sand hover:border-sage-400 hover:shadow-xl transition-all duration-300 text-center flex flex-col items-center">
+                <div class="w-14 h-14 mb-4 rounded-2xl bg-sage-50 text-sage-700 flex items-center justify-center group-hover:bg-sage-600 group-hover:text-cream transition-all duration-300 shadow-sm">
+                    <i class="fa-solid fa-dumbbell text-xl"></i>
+                </div>
+                <h3 class="font-bold text-charcoal group-hover:text-sage-600 transition-colors text-sm sm:text-base">Fitness</h3>
+                <span class="text-[11px] text-muted mt-1 font-medium">22 Products</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT CATALOG SECTION -->
+    <section id="shop" class="py-20 bg-white border-y border-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Title & Filter Bar -->
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-10">
+                <div>
+                    <span class="text-xs font-bold text-sage-600 uppercase tracking-widest">Selected Inventory</span>
+                    <h2 class="text-3xl font-bold text-charcoal mt-1 tracking-tight">Product Catalog</h2>
+                </div>
+
+                <!-- Filter Controls -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <!-- Category Pill Filters -->
+                    <div class="flex flex-wrap items-center gap-1.5 bg-cream p-1.5 rounded-full border border-sand" id="categoryPillContainer">
+                        <button onclick="filterByCategory('All')" class="category-pill active px-4 py-1.5 rounded-full text-xs font-semibold bg-sage-600 text-white shadow-sm transition-all">All</button>
+                        <button onclick="filterByCategory('Cricket')" class="category-pill px-4 py-1.5 rounded-full text-xs font-medium text-charcoal hover:text-sage-600 transition-all">Cricket</button>
+                        <button onclick="filterByCategory('Football')" class="category-pill px-4 py-1.5 rounded-full text-xs font-medium text-charcoal hover:text-sage-600 transition-all">Football</button>
+                        <button onclick="filterByCategory('Volleyball')" class="category-pill px-4 py-1.5 rounded-full text-xs font-medium text-charcoal hover:text-sage-600 transition-all">Volleyball</button>
+                        <button onclick="filterByCategory('Basketball')" class="category-pill px-4 py-1.5 rounded-full text-xs font-medium text-charcoal hover:text-sage-600 transition-all">Basketball</button>
+                        <button onclick="filterByCategory('Badminton')" class="category-pill px-4 py-1.5 rounded-full text-xs font-medium text-charcoal hover:text-sage-600 transition-all">Badminton</button>
+                        <button onclick="filterByCategory('Fitness')" class="category-pill px-4 py-1.5 rounded-full text-xs font-medium text-charcoal hover:text-sage-600 transition-all">Fitness</button>
+                    </div>
+
+                    <!-- Price Sort Dropdown -->
+                    <select id="sortSelect" onchange="sortProducts()" class="px-4 py-2 bg-cream text-charcoal text-xs font-medium border border-sand rounded-full focus:outline-none focus:border-sage-500 cursor-pointer shadow-sm">
+                        <option value="featured">Featured Order</option>
+                        <option value="lowToHigh">Price: Low to High</option>
+                        <option value="highToLow">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Injected via JavaScript -->
+            </div>
+
+            <!-- Empty Search State -->
+            <div id="emptyCatalogState" class="hidden text-center py-20">
+                <div class="w-16 h-16 bg-sage-50 text-sage-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h3 class="text-xl font-bold text-charcoal">No Matching Gear Found</h3>
+                <p class="text-muted text-xs sm:text-sm mt-1 max-w-sm mx-auto">Try refining your category selections, search query, or price options.</p>
+                <button onclick="filterByCategory('All')" class="mt-5 px-6 py-2.5 bg-sage-600 text-cream text-xs font-semibold rounded-full hover:bg-charcoal transition-all shadow-sm">Reset All Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI SHOPPING ASSISTANT SECTION -->
+    <section id="ai-assistant" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-charcoal rounded-3xl p-6 sm:p-10 text-cream shadow-2xl relative overflow-hidden border border-sage-900">
+            <!-- Decorative Glow Accent -->
+            <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-sage-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-3xl mb-6">
+                <div class="inline-flex items-center space-x-2 bg-sage-800/80 border border-sage-700/60 px-3.5 py-1.5 rounded-full text-sage-300 text-xs font-semibold uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-wand-magic-sparkles text-sage-400"></i>
+                    <span>SV Smart Advisor</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">AI Athletic Consultant</h2>
+                <p class="text-sand/80 text-xs sm:text-sm mt-2 leading-relaxed">Ask our intelligent system for tailored recommendations based on sport type, expertise, or price limit.</p>
+            </div>
+
+            <!-- Quick Prompt Suggestions Chips -->
+            <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-[11px] text-sage-400 font-semibold self-center mr-1">Quick prompts:</span>
+                <button onclick="setAiPrompt('Show football gear under $50')" class="px-3 py-1 bg-sage-900/90 hover:bg-sage-700/60 text-sand text-[11px] rounded-full border border-sage-700/50 transition-colors">"Football gear under $50"</button>
+                <button onclick="setAiPrompt('Best badminton racquet for beginners')" class="px-3 py-1 bg-sage-900/90 hover:bg-sage-700/60 text-sand text-[11px] rounded-full border border-sage-700/50 transition-colors">"Badminton racquet for beginners"</button>
+                <button onclick="setAiPrompt('Home workout fitness accessories')" class="px-3 py-1 bg-sage-900/90 hover:bg-sage-700/60 text-sand text-[11px] rounded-full border border-sage-700/50 transition-colors">"Home workout fitness"</button>
+            </div>
+
+            <!-- Chat Container -->
+            <div class="bg-sage-900/70 rounded-2xl border border-sage-700/50 flex flex-col h-[420px] overflow-hidden">
+                <!-- Chat Messages Feed -->
+                <div id="aiChatFeed" class="flex-1 p-4 sm:p-6 overflow-y-auto space-y-4">
+                    <!-- Initial AI Message -->
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-full bg-sage-600 flex items-center justify-center flex-shrink-0 text-cream text-xs font-bold shadow-sm">SV</div>
+                        <div class="bg-sage-800/90 text-cream text-xs sm:text-sm p-4 rounded-2xl rounded-tl-none max-w-md border border-sage-700/40">
+                            Hello! I am your SV Sports Advisor. Specify your target sport, price range, or equipment needs, and I'll find the best match for you.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input Form -->
+                <form id="aiChatForm" onsubmit="handleAiQuery(event)" class="p-3 sm:p-4 bg-charcoal border-t border-sage-700/40 flex items-center gap-2">
+                    <input type="text" id="aiInput" placeholder="Type your query (e.g., 'Cricket bat under $200')"
+                        class="flex-1 bg-sage-900/90 text-cream text-xs sm:text-sm px-4 py-3 rounded-xl border border-sage-700/60 focus:border-sage-400 focus:outline-none placeholder-muted">
+                    <button type="submit" class="bg-sage-600 hover:bg-sage-500 text-cream px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-colors flex items-center space-x-1.5 shadow-sm">
+                        <span>Ask Advisor</span>
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT BRAND SECTION -->
+    <section id="about" class="py-20 bg-cream border-t border-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-xs font-bold text-sage-600 uppercase tracking-widest">Our Philosophy</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-charcoal mt-2 mb-6 tracking-tight">Endurance Engineered by Elegance.</h2>
+                    <p class="text-muted leading-relaxed text-xs sm:text-sm mb-6">
+                        At SV SPORTS, we believe athletic gear should embody subtle craft and enduring capability. Founded in 2021, our design language merges earth-toned minimalist aesthetics with high-performance specs across six major athletic disciplines.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-sand">
+                        <div>
+                            <span class="block text-2xl font-bold text-sage-700">100%</span>
+                            <span class="text-[11px] text-muted font-medium">Quality Inspected</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-sage-700">6</span>
+                            <span class="text-[11px] text-muted font-medium">Pro Disciplines</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-sage-700">24/7</span>
+                            <span class="text-[11px] text-muted font-medium">Smart AI Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=800&auto=format&fit=crop" 
+                         alt="Athletic Brand Studio" class="rounded-3xl shadow-2xl w-full object-cover h-[420px] border border-sand">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl border border-sand hidden sm:block max-w-xs">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <i class="fa-solid fa-leaf text-sage-600 text-lg"></i>
+                            <h4 class="font-bold text-charcoal text-sm">Earth-Conscious</h4>
+                        </div>
+                        <p class="text-xs text-muted leading-normal">All product packaging utilizes 100% recyclable biodegradable materials.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-charcoal text-cream pt-16 pb-12 border-t border-sage-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-sage-900">
+                
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2.5">
+                        <span class="w-9 h-9 rounded-xl bg-sage-600 text-cream flex items-center justify-center font-bold text-sm">SV</span>
+                        <span class="text-xl font-bold tracking-tight text-white">SV <span class="text-sage-400 font-light">SPORTS</span></span>
+                    </div>
+                    <p class="text-xs text-sand/70 leading-relaxed">
+                        Elevating performance through premium material selection, organic design lines, and lasting structural integrity.
+                    </p>
+                    <div class="flex space-x-4 text-sand/80 pt-2">
+                        <a href="#" class="hover:text-sage-400 transition-colors"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="#" class="hover:text-sage-400 transition-colors"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                        <a href="#" class="hover:text-sage-400 transition-colors"><i class="fa-brands fa-youtube text-lg"></i></a>
+                        <a href="#" class="hover:text-sage-400 transition-colors"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest mb-4 text-sage-400">Navigation</h4>
+                    <ul class="space-y-2.5 text-xs text-sand/80 font-medium">
+                        <li><a href="#hero" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#categories" class="hover:text-white transition-colors">Sports Disciplines</a></li>
+                        <li><a href="#shop" class="hover:text-white transition-colors">Shop Catalog</a></li>
+                        <li><a href="#ai-assistant" class="hover:text-white transition-colors">Smart Advisor</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About Brand</a></li>
+                    </ul>
+                </div>
+
+                <!-- Discipline Categories -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest mb-4 text-sage-400">Categories</h4>
+                    <ul class="space-y-2.5 text-xs text-sand/80 font-medium">
+                        <li><a href="#shop" onclick="filterByCategory('Cricket')" class="hover:text-white transition-colors">Cricket Gear</a></li>
+                        <li><a href="#shop" onclick="filterByCategory('Football')" class="hover:text-white transition-colors">Football Equipment</a></li>
+                        <li><a href="#shop" onclick="filterByCategory('Volleyball')" class="hover:text-white transition-colors">Volleyball Gear</a></li>
+                        <li><a href="#shop" onclick="filterByCategory('Basketball')" class="hover:text-white transition-colors">Basketball Apparel</a></li>
+                        <li><a href="#shop" onclick="filterByCategory('Fitness')" class="hover:text-white transition-colors">Home Gym & Fitness</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest mb-4 text-sage-400">Newsletter</h4>
+                    <p class="text-xs text-sand/70 mb-3">Subscribe for limited athletic drops and conditioning guides.</p>
+                    <form onsubmit="handleNewsletter(event)" class="space-y-2">
+                        <input type="email" required placeholder="Enter your email" 
+                            class="w-full px-3.5 py-2.5 text-xs rounded-xl bg-sage-900 border border-sage-800 text-cream focus:outline-none focus:border-sage-500">
+                        <button type="submit" class="w-full py-2.5 bg-sage-600 hover:bg-sage-500 text-cream text-xs font-semibold rounded-xl transition-colors shadow-sm">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-sand/50 gap-4">
+                <p>&copy; 2026 SV SPORTS Inc. All rights reserved.</p>
+                <div class="flex space-x-6 font-medium">
+                    <a href="#" class="hover:text-sand">Privacy Policy</a>
+                    <a href="#" class="hover:text-sand">Terms of Service</a>
+                    <a href="#" class="hover:text-sand">Shipping Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SHOPPING CART SLIDING DRAWER -->
+    <div id="cartDrawerBackdrop" class="fixed inset-0 bg-charcoal/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-[440px] bg-cream z-50 transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
+        <!-- Cart Header -->
+        <div class="p-6 border-b border-sand flex items-center justify-between bg-white">
+            <div class="flex items-center space-x-2.5">
+                <i class="fa-solid fa-bag-shopping text-sage-600 text-lg"></i>
+                <h3 class="font-bold text-charcoal text-lg">Your Shopping Bag</h3>
+                <span id="drawerCartCount" class="text-xs bg-sage-100 text-sage-800 px-2.5 py-0.5 rounded-full font-semibold">0 items</span>
+            </div>
+            <button id="closeCartBtn" class="p-2 text-muted hover:text-charcoal text-lg rounded-full hover:bg-sand/40" aria-label="Close Cart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items List -->
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <!-- Dynamic items -->
+        </div>
+
+        <!-- Cart Billing Footer -->
+        <div class="p-6 border-t border-sand bg-white space-y-3">
+            <div class="space-y-1.5 text-xs text-muted">
+                <div class="flex justify-between">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal" class="font-semibold text-charcoal">$0.00</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Shipping Fee</span>
+                    <span id="cartShipping" class="font-semibold text-charcoal">$0.00</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Estimated Tax (8%)</span>
+                    <span id="cartTax" class="font-semibold text-charcoal">$0.00</span>
+                </div>
+                <div class="flex justify-between text-sm font-bold text-charcoal pt-2.5 border-t border-sand">
+                    <span>Total Order</span>
+                    <span id="cartTotal" class="text-sage-700">$0.00</span>
+                </div>
+            </div>
+
+            <button id="checkoutBtn" onclick="openCheckoutModal()" class="w-full py-3.5 bg-sage-600 hover:bg-charcoal text-cream font-semibold rounded-full text-sm transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkoutModal" class="fixed inset-0 bg-charcoal/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-cream w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl border border-sand max-h-[90vh] flex flex-col">
+            <!-- Modal Header -->
+            <div class="p-6 bg-white border-b border-sand flex justify-between items-center">
+                <div>
+                    <h3 class="text-xl font-bold text-charcoal">Delivery & Billing</h3>
+                    <p class="text-xs text-muted">Enter shipping address to complete purchase.</p>
+                </div>
+                <button onclick="closeCheckoutModal()" class="text-muted hover:text-charcoal p-2 rounded-full hover:bg-sand/40">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Form Content -->
+            <form id="checkoutForm" onsubmit="handlePlaceOrder(event)" class="p-6 overflow-y-auto space-y-4 text-xs">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-semibold text-charcoal mb-1">Full Name</label>
+                        <input type="text" required placeholder="Alex Morgan" 
+                            class="w-full px-3.5 py-2.5 rounded-xl border border-sand focus:border-sage-500 bg-white outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-charcoal mb-1">Email Address</label>
+                        <input type="email" required placeholder="alex@example.com" 
+                            class="w-full px-3.5 py-2.5 rounded-xl border border-sand focus:border-sage-500 bg-white outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-charcoal mb-1">Street Address</label>
+                    <input type="text" required placeholder="124 Athletic Way, Suite 400" 
+                        class="w-full px-3.5 py-2.5 rounded-xl border border-sand focus:border-sage-500 bg-white outline-none">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-semibold text-charcoal mb-1">City</label>
+                        <input type="text" required placeholder="Chicago" 
+                            class="w-full px-3.5 py-2.5 rounded-xl border border-sand focus:border-sage-500 bg-white outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-charcoal mb-1">Postal Code</label>
+                        <input type="text" required placeholder="60601" 
+                            class="w-full px-3.5 py-2.5 rounded-xl border border-sand focus:border-sage-500 bg-white outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-charcoal mb-1.5">Payment Method</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <label class="flex items-center space-x-2 p-3 bg-white border border-sand rounded-xl cursor-pointer hover:border-sage-500">
+                            <input type="radio" name="payment" value="card" checked class="text-sage-600 focus:ring-sage-500">
+                            <span class="font-semibold text-charcoal">Credit Card</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-3 bg-white border border-sand rounded-xl cursor-pointer hover:border-sage-500">
+                            <input type="radio" name="payment" value="apple" class="text-sage-600 focus:ring-sage-500">
+                            <span class="font-semibold text-charcoal">Apple Pay</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-3 bg-white border border-sand rounded-xl cursor-pointer hover:border-sage-500">
+                            <input type="radio" name="payment" value="paypal" class="text-sage-600 focus:ring-sage-500">
+                            <span class="font-semibold text-charcoal">PayPal</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Order Final Billing Summary Box -->
+                <div class="bg-sand/30 p-4 rounded-xl border border-sand space-y-1.5 mt-4">
+                    <div class="flex justify-between text-muted">
+                        <span>Items Subtotal:</span>
+                        <span id="checkoutSubtotal" class="font-semibold text-charcoal">$0.00</span>
+                    </div>
+                    <div class="flex justify-between text-muted">
+                        <span>Shipping & Handling:</span>
+                        <span id="checkoutShipping" class="font-semibold text-charcoal">$0.00</span>
+                    </div>
+                    <div class="flex justify-between text-muted">
+                        <span>Estimated Tax:</span>
+                        <span id="checkoutTax" class="font-semibold text-charcoal">$0.00</span>
+                    </div>
+                    <div class="flex justify-between font-bold text-sm text-charcoal pt-2 border-t border-sand">
+                        <span>Total Due:</span>
+                        <span id="checkoutTotal" class="text-sage-700">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-3.5 bg-sage-600 hover:bg-charcoal text-cream font-semibold rounded-full text-sm transition-all shadow-md">
+                        Confirm & Place Order
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ORDER CONFIRMATION MODAL -->
+    <div id="successModal" class="fixed inset-0 bg-charcoal/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-md rounded-3xl p-8 text-center shadow-2xl border border-sand space-y-4">
+            <div class="w-16 h-16 bg-sage-100 text-sage-600 rounded-full flex items-center justify-center mx-auto text-2xl shadow-inner">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-charcoal tracking-tight">Order Confirmed</h3>
+            <p class="text-xs text-muted leading-relaxed">
+                Thank you for choosing SV SPORTS. Reference <span id="orderRefCode" class="font-mono font-bold text-charcoal">#SV-84920</span> has been created.
+            </p>
+            <div class="pt-4">
+                <button onclick="closeSuccessModal()" class="w-full py-3 bg-sage-600 text-cream font-semibold rounded-full text-xs hover:bg-charcoal transition-all shadow-sm">
+                    Back to Store
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-charcoal text-cream text-xs px-4 py-3 rounded-2xl shadow-2xl flex items-center space-x-3 transform translate-y-20 opacity-0 transition-all duration-300 border border-sage-800">
+        <i class="fa-solid fa-circle-check text-sage-400 text-sm"></i>
+        <span id="toastMessage">Item added to cart</span>
+    </div>
+
+    <!-- APPLICATION JAVASCRIPT LOGIC -->
+    <script>
+        // MOCK PRODUCT DATASET
+        const products = [
+            {
+                id: 'cricket-1',
+                name: 'SV Heritage Willow Bat',
+                category: 'Cricket',
+                price: 185.00,
+                rating: 4.9,
+                image: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=600&auto=format&fit=crop',
+                description: 'Hand-crafted Grade 1 English Willow featuring optimum pickup & light swell balance.'
+            },
+            {
+                id: 'cricket-2',
+                name: 'Pro Leather Match Ball (Pack of 3)',
+                category: 'Cricket',
+                price: 45.00,
+                rating: 4.8,
+                image: 'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=600&auto=format&fit=crop',
+                description: 'Alum tanned premium steer hide leather balls with hand-stitched seam.'
+            },
+            {
+                id: 'cricket-3',
+                name: 'Tactical Batting Pads',
+                category: 'Cricket',
+                price: 75.00,
+                rating: 4.7,
+                image: 'https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?q=80&w=600&auto=format&fit=crop',
+                description: 'Ultra-light high-density foam padding with reinforced knee rolls.'
+            },
+            {
+                id: 'football-1',
+                name: 'SV Apex Thermal Match Football',
+                category: 'Football',
+                price: 60.00,
+                rating: 4.9,
+                image: 'https://images.unsplash.com/photo-1614632537190-23e4146777db?q=80&w=600&auto=format&fit=crop',
+                description: 'FIFA Quality Pro certified thermobonded match ball with textured aero-grooves.'
+            },
+            {
+                id: 'football-2',
+                name: 'Precision Agility Shin Guards',
+                category: 'Football',
+                price: 25.00,
+                rating: 4.6,
+                image: 'https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=600&auto=format&fit=crop',
+                description: 'Anatomically shaped carbon-effect shell with breathable EVA foam backing.'
+            },
+            {
+                id: 'football-3',
+                name: 'Pro Grip Goalkeeper Gloves',
+                category: 'Football',
+                price: 55.00,
+                rating: 4.8,
+                image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop',
+                description: '4mm German Contact Latex foam for superior tack in wet or dry conditions.'
+            },
+            {
+                id: 'volleyball-1',
+                name: 'SV Soft-Touch Indoor Volleyball',
+                category: 'Volleyball',
+                price: 38.00,
+                rating: 4.7,
+                image: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=600&auto=format&fit=crop',
+                description: 'Composite micro-fiber cover with composite stitch panel construct.'
+            },
+            {
+                id: 'volleyball-2',
+                name: 'Impact Cushion Knee Pads',
+                category: 'Volleyball',
+                price: 22.00,
+                rating: 4.5,
+                image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=600&auto=format&fit=crop',
+                description: 'Ergonomic gel padding protecting against hard court impacts.'
+            },
+            {
+                id: 'basketball-1',
+                name: 'SV Tour Court Composite Basketball',
+                category: 'Basketball',
+                price: 50.00,
+                rating: 4.9,
+                image: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=600&auto=format&fit=crop',
+                description: 'Deep channel pebbled microfiber leather designed for optimal grip indoor/outdoor.'
+            },
+            {
+                id: 'basketball-2',
+                name: 'Pro Performance Hoops Mesh Shorts',
+                category: 'Basketball',
+                price: 35.00,
+                rating: 4.6,
+                image: 'https://images.unsplash.com/photo-1515523110800-9415d13b84a8?q=80&w=600&auto=format&fit=crop',
+                description: 'Breathable dual-layer mesh with elastic waistband and deep side pockets.'
+            },
+            {
+                id: 'badminton-1',
+                name: 'SV Graphite Nano Racquet',
+                category: 'Badminton',
+                price: 110.00,
+                rating: 4.9,
+                image: 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=600&auto=format&fit=crop',
+                description: 'Ultra-light 4U carbon nano-frame with even weight distribution for quick response.'
+            },
+            {
+                id: 'badminton-2',
+                name: 'Goose Feather Shuttlecocks (12 Pack)',
+                category: 'Badminton',
+                price: 32.00,
+                rating: 4.8,
+                image: 'https://images.unsplash.com/photo-1521537634581-0ddea2efe2b2?q=80&w=600&auto=format&fit=crop',
+                description: 'Tournament grade genuine goose feather flight accuracy with natural cork base.'
+            },
+            {
+                id: 'fitness-1',
+                name: 'Cast Iron Kettlebell (16kg)',
+                category: 'Fitness',
+                price: 65.00,
+                rating: 4.8,
+                image: 'https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?q=80&w=600&auto=format&fit=crop',
+                description: 'Solid single-cast iron kettlebell with powder coated texture grip.'
+            },
+            {
+                id: 'fitness-2',
+                name: 'Eco Cork Yoga & Training Mat',
+                category: 'Fitness',
+                price: 48.00,
+                rating: 4.7,
+                image: 'https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?q=80&w=600&auto=format&fit=crop',
+                description: 'Natural organic cork top layer with non-slip natural rubber backing.'
+            },
+            {
+                id: 'fitness-3',
+                name: 'Heavy-Duty Resistance Loop Bands',
+                category: 'Fitness',
+                price: 20.00,
+                rating: 4.6,
+                image: 'https://images.unsplash.com/photo-1598289431512-b97b0917affc?q=80&w=600&auto=format&fit=crop',
+                description: 'Set of 5 snap-resistant 100% natural latex bands with varied resistance levels.'
+            }
+        ];
+
+        // STATE MANAGEMENT
+        let currentCategory = 'All';
+        let searchQuery = '';
+        let currentSort = 'featured';
+        let cart = [];
+
+        // DOM ELEMENTS
+        const productGrid = document.getElementById('productGrid');
+        const emptyCatalogState = document.getElementById('emptyCatalogState');
+        const cartBadge = document.getElementById('cartBadge');
+        const drawerCartCount = document.getElementById('drawerCartCount');
+        const cartItemsContainer = document.getElementById('cartItemsContainer');
+        const cartSubtotal = document.getElementById('cartSubtotal');
+        const cartShipping = document.getElementById('cartShipping');
+        const cartTax = document.getElementById('cartTax');
+        const cartTotal = document.getElementById('cartTotal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+
+        // INITIALIZATION
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            initCarousel();
+            setupEventListeners();
+        });
+
+        // HERO CAROUSEL LOGIC
+        let currentSlide = 0;
+        let slideInterval;
+
+        function initCarousel() {
+            startCarousel();
+        }
+
+        function startCarousel() {
+            slideInterval = setInterval(() => {
+                setSlide((currentSlide + 1) % 3);
+            }, 5000);
+        }
+
+        function setSlide(index) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
+            
+            slides[currentSlide].classList.remove('opacity-100');
+            slides[currentSlide].classList.add('opacity-0');
+            dots[currentSlide].classList.remove('w-8', 'bg-sage-600');
+            dots[currentSlide].classList.add('w-2.5', 'bg-muted/40');
+
+            currentSlide = index;
+
+            slides[currentSlide].classList.remove('opacity-0');
+            slides[currentSlide].classList.add('opacity-100');
+            dots[currentSlide].classList.remove('w-2.5', 'bg-muted/40');
+            dots[currentSlide].classList.add('w-8', 'bg-sage-600');
+
+            clearInterval(slideInterval);
+            startCarousel();
+        }
+
+        // EVENT LISTENERS SETUP
+        function setupEventListeners() {
+            // Header Search Input
+            document.getElementById('headerSearchInput').addEventListener('input', (e) => {
+                searchQuery = e.target.value.toLowerCase().trim();
+                renderProducts();
+            });
+
+            // Mobile Search Input
+            document.getElementById('mobileSearchInput').addEventListener('input', (e) => {
+                searchQuery = e.target.value.toLowerCase().trim();
+                renderProducts();
+            });
+
+            // Mobile Menu Toggle
+            document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+                const menu = document.getElementById('mobileMenu');
+                const icon = document.getElementById('menuIcon');
+                menu.classList.toggle('hidden');
+                if (menu.classList.contains('hidden')) {
+                    icon.className = 'fa-solid fa-bars text-xl';
+                } else {
+                    icon.className = 'fa-solid fa-xmark text-xl';
+                }
+            });
+
+            // Cart Drawer Controls
+            document.getElementById('cartBtn').addEventListener('click', openCart);
+            document.getElementById('closeCartBtn').addEventListener('click', closeCart);
+            document.getElementById('cartDrawerBackdrop').addEventListener('click', closeCart);
+        }
+
+        // FILTER & SORT PRODUCTS
+        function filterByCategory(category) {
+            currentCategory = category;
+            
+            // Update active pill button UI
+            const pills = document.querySelectorAll('.category-pill');
+            pills.forEach(pill => {
+                if (pill.innerText.trim() === category || (category === 'All' && pill.innerText.trim() === 'All')) {
+                    pill.className = 'category-pill active px-4 py-1.5 rounded-full text-xs font-semibold bg-sage-600 text-white shadow-sm transition-all';
+                } else {
+                    pill.className = 'category-pill px-4 py-1.5 rounded-full text-xs font-medium text-charcoal hover:text-sage-600 transition-all';
+                }
+            });
+
+            renderProducts();
+        }
+
+        function sortProducts() {
+            currentSort = document.getElementById('sortSelect').value;
+            renderProducts();
+        }
+
+        function getFilteredProducts() {
+            return products.filter(product => {
+                const matchesCategory = (currentCategory === 'All') || (product.category === currentCategory);
+                const matchesSearch = product.name.toLowerCase().includes(searchQuery) || 
+                                      product.description.toLowerCase().includes(searchQuery) ||
+                                      product.category.toLowerCase().includes(searchQuery);
+                return matchesCategory && matchesSearch;
+            }).sort((a, b) => {
+                if (currentSort === 'lowToHigh') return a.price - b.price;
+                if (currentSort === 'highToLow') return b.price - a.price;
+                if (currentSort === 'rating') return b.rating - a.rating;
+                return 0; // Default featured order
+            });
+        }
+
+        // RENDER PRODUCT CATALOG
+        function renderProducts() {
+            const list = getFilteredProducts();
+
+            if (list.length === 0) {
+                productGrid.innerHTML = '';
+                emptyCatalogState.classList.remove('hidden');
+                return;
+            }
+
+            emptyCatalogState.classList.add('hidden');
+            productGrid.innerHTML = list.map(item => `
+                <div class="group bg-white rounded-2xl border border-sand hover:border-sage-400 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <!-- Product Image Box -->
+                        <div class="relative bg-sand/20 aspect-square overflow-hidden">
+                            <img src="${item.image}" alt="${item.name}" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-charcoal text-[10px] font-bold px-2.5 py-1 rounded-full border border-sand shadow-sm">
+                                ${item.category}
+                            </span>
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-charcoal text-[10px] font-bold px-2 py-1 rounded-full flex items-center space-x-1 border border-sand shadow-sm">
+                                <i class="fa-solid fa-star text-amber-500 text-[9px]"></i>
+                                <span>${item.rating}</span>
+                            </div>
+                        </div>
+
+                        <!-- Product Content -->
+                        <div class="p-5">
+                            <h3 class="font-bold text-charcoal text-base group-hover:text-sage-600 transition-colors leading-snug">${item.name}</h3>
+                            <p class="text-xs text-muted mt-1.5 line-clamp-2 leading-relaxed">${item.description}</p>
+                        </div>
+                    </div>
+
+                    <!-- Card Footer / Price & Add Button -->
+                    <div class="px-5 pb-5 pt-3 flex items-center justify-between border-t border-sand/40">
+                        <div>
+                            <span class="text-[10px] text-muted block uppercase font-bold tracking-wider">Price</span>
+                            <span class="text-lg font-bold text-charcoal">$${item.price.toFixed(2)}</span>
+                        </div>
+                        <button onclick="addToCart('${item.id}')" 
+                            class="px-4 py-2 bg-sage-600 hover:bg-charcoal text-cream text-xs font-semibold rounded-full transition-all duration-200 flex items-center space-x-1.5 shadow-sm">
+                            <i class="fa-solid fa-plus text-[10px]"></i>
+                            <span>Add</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // CART LOGIC
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            updateCartUI();
+            showToast(`Added ${product.name} to cart`);
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+        }
+
+        function updateQuantity(productId, delta) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+
+            item.quantity += delta;
+            if (item.quantity <= 0) {
+                removeFromCart(productId);
+            } else {
+                updateCartUI();
+            }
+        }
+
+        function updateCartUI() {
+            // Total items counter
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            if (totalCount > 0) {
+                cartBadge.innerText = totalCount;
+                cartBadge.classList.remove('hidden');
+                checkoutBtn.removeAttribute('disabled');
+            } else {
+                cartBadge.classList.add('hidden');
+                checkoutBtn.setAttribute('disabled', 'true');
+            }
+
+            drawerCartCount.innerText = `${totalCount} item${totalCount === 1 ? '' : 's'}`;
+
+            // Render Cart Item Rows
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="text-center py-16 text-muted">
+                        <i class="fa-solid fa-bag-shopping text-3xl mb-3 text-sand"></i>
+                        <p class="text-xs">Your shopping bag is currently empty.</p>
+                    </div>
+                `;
+            } else {
+                cartItemsContainer.innerHTML = cart.map(item => `
+                    <div class="flex items-center space-x-3 bg-white p-3 rounded-2xl border border-sand shadow-sm">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-xl object-cover bg-sand/30 flex-shrink-0 border border-sand/50">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="text-xs font-bold text-charcoal truncate">${item.name}</h4>
+                            <span class="text-xs text-sage-600 font-semibold">$${item.price.toFixed(2)}</span>
+                            <div class="flex items-center space-x-2.5 mt-2">
+                                <button onclick="updateQuantity('${item.id}', -1)" class="w-5 h-5 rounded-full bg-sand/60 text-charcoal hover:bg-sand flex items-center justify-center text-xs font-bold">-</button>
+                                <span class="text-xs font-semibold text-charcoal">${item.quantity}</span>
+                                <button onclick="updateQuantity('${item.id}', 1)" class="w-5 h-5 rounded-full bg-sand/60 text-charcoal hover:bg-sand flex items-center justify-center text-xs font-bold">+</button>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart('${item.id}')" class="text-muted hover:text-red-500 p-1.5 transition-colors" aria-label="Remove item">
+                            <i class="fa-solid fa-trash-can text-xs"></i>
+                        </button>
+                    </div>
+                `).join('');
+            }
+
+            // Billing Calculations
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shipping = subtotal > 100 || subtotal === 0 ? 0.00 : 15.00;
+            const tax = subtotal * 0.08;
+            const total = subtotal + shipping + tax;
+
+            cartSubtotal.innerText = `$${subtotal.toFixed(2)}`;
+            cartShipping.innerText = shipping === 0 ? (subtotal === 0 ? '$0.00' : 'FREE') : `$${shipping.toFixed(2)}`;
+            cartTax.innerText = `$${tax.toFixed(2)}`;
+            cartTotal.innerText = `$${total.toFixed(2)}`;
+
+            // Sync with checkout modal labels
+            document.getElementById('checkoutSubtotal').innerText = `$${subtotal.toFixed(2)}`;
+            document.getElementById('checkoutShipping').innerText = shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`;
+            document.getElementById('checkoutTax').innerText = `$${tax.toFixed(2)}`;
+            document.getElementById('checkoutTotal').innerText = `$${total.toFixed(2)}`;
+        }
+
+        function openCart() {
+            document.getElementById('cartDrawerBackdrop').classList.remove('opacity-0', 'pointer-events-none');
+            document.getElementById('cartDrawer').classList.remove('translate-x-full');
+        }
+
+        function closeCart() {
+            document.getElementById('cartDrawerBackdrop').classList.add('opacity-0', 'pointer-events-none');
+            document.getElementById('cartDrawer').classList.add('translate-x-full');
+        }
+
+        // CHECKOUT & ORDER MODAL LOGIC
+        function openCheckoutModal() {
+            if (cart.length === 0) return;
+            closeCart();
+            document.getElementById('checkoutModal').classList.remove('hidden');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.add('hidden');
+        }
+
+        function handlePlaceOrder(event) {
+            event.preventDefault();
+            closeCheckoutModal();
+            
+            // Generate random order reference
+            const randomRef = '#SV-' + Math.floor(10000 + Math.random() * 90000);
+            document.getElementById('orderRefCode').innerText = randomRef;
+
+            // Clear Cart
+            cart = [];
+            updateCartUI();
+
+            // Show confirmation
+            document.getElementById('successModal').classList.remove('hidden');
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        // AI ASSISTANT LOGIC (SV SMART ADVISOR)
+        function setAiPrompt(text) {
+            document.getElementById('aiInput').value = text;
+            handleAiQuery(new Event('submit'));
+        }
+
+        function handleAiQuery(e) {
+            if (e) e.preventDefault();
+            const input = document.getElementById('aiInput');
+            const query = input.value.trim();
+            if (!query) return;
+
+            const chatFeed = document.getElementById('aiChatFeed');
+
+            // Render User Message
+            chatFeed.innerHTML += `
+                <div class="flex items-start space-x-3 justify-end">
+                    <div class="bg-sage-600 text-cream text-xs sm:text-sm p-3.5 rounded-2xl rounded-tr-none max-w-md shadow-sm">
+                        ${escapeHtml(query)}
+                    </div>
+                </div>
+            `;
+            input.value = '';
+            chatFeed.scrollTop = chatFeed.scrollHeight;
+
+            // Process Recommendation Logic
+            setTimeout(() => {
+                const results = processAiRecommendation(query);
+                
+                let responseHtml = `<p class="mb-2">Based on your query, here are my top recommendations:</p>`;
+                if (results.length > 0) {
+                    responseHtml += `<div class="space-y-2 mt-2">`;
+                    results.forEach(item => {
+                        responseHtml += `
+                            <div class="flex items-center justify-between bg-sage-800/90 p-2.5 rounded-xl border border-sage-700/60 shadow-sm">
+                                <div class="flex items-center space-x-2.5 min-w-0">
+                                    <img src="${item.image}" class="w-10 h-10 rounded-lg object-cover flex-shrink-0 border border-sage-700">
+                                    <div class="truncate">
+                                        <div class="font-bold text-cream text-xs truncate">${item.name}</div>
+                                        <div class="text-[10px] text-sage-300 font-medium">$${item.price.toFixed(2)} • ${item.category}</div>
+                                    </div>
+                                </div>
+                                <button onclick="addToCart('${item.id}')" class="px-3 py-1.5 bg-sage-500 hover:bg-sage-600 text-cream text-[10px] font-semibold rounded-lg flex-shrink-0 transition-colors shadow-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        `;
+                    });
+                    responseHtml += `</div>`;
+                } else {
+                    responseHtml = `I couldn't find an exact match for your specific query. Try asking for categories like "Cricket", "Football", "Fitness", or price limits like "under $50".`;
+                }
+
+                chatFeed.innerHTML += `
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-full bg-sage-600 flex items-center justify-center flex-shrink-0 text-cream text-xs font-bold shadow-sm">SV</div>
+                        <div class="bg-sage-800/80 text-cream text-xs sm:text-sm p-4 rounded-2xl rounded-tl-none max-w-md border border-sage-700/40">
+                            ${responseHtml}
+                        </div>
+                    </div>
+                `;
+                chatFeed.scrollTop = chatFeed.scrollHeight;
+            }, 450);
+        }
+
+        function processAiRecommendation(userQuery) {
+            const q = userQuery.toLowerCase();
+            
+            // Extract potential budget
+            let maxBudget = null;
+            const budgetMatch = q.match(/under\s* \$?(\d+)/) || q.match(/\$?(\d+)\s*budget/);
+            if (budgetMatch) {
+                maxBudget = parseFloat(budgetMatch[1]);
+            }
+
+            return products.filter(item => {
+                let categoryMatch = false;
+                if (q.includes('cricket') && item.category === 'Cricket') categoryMatch = true;
+                else if (q.includes('football') && item.category === 'Football') categoryMatch = true;
+                else if (q.includes('volleyball') && item.category === 'Volleyball') categoryMatch = true;
+                else if (q.includes('basketball') && item.category === 'Basketball') categoryMatch = true;
+                else if (q.includes('badminton') && item.category === 'Badminton') categoryMatch = true;
+                else if ((q.includes('fitness') || q.includes('gym') || q.includes('workout')) && item.category === 'Fitness') categoryMatch = true;
+                else if (!q.includes('cricket') && !q.includes('football') && !q.includes('volleyball') && !q.includes('basketball') && !q.includes('badminton') && !q.includes('fitness')) {
+                    categoryMatch = true;
+                }
+
+                let budgetOk = true;
+                if (maxBudget !== null) {
+                    budgetOk = item.price <= maxBudget;
+                }
+
+                return categoryMatch && budgetOk;
+            }).slice(0, 3);
+        }
+
+        // UTILITY FUNCTIONS
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            showToast('Thank you for subscribing to SV SPORTS newsletter!');
+            e.target.reset();
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.innerText = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
